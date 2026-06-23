@@ -1,5 +1,6 @@
 const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysockets/baileys')
 const cron = require('node-cron')
+require('dotenv').config();
 
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState('auth_info')
@@ -10,7 +11,7 @@ async function startBot() {
   // Fungsi untuk mengirim pesan jadwal kerja bakti
   async function kirimJadwalKerjaBakti() {
     // Ganti dengan nomor grup/WA tujuan, contoh: '6281234567890@s.whatsapp.net' untuk personal, atau 'xxxxxx-xxxxxx@g.us' untuk grup
-    const tujuan = '62895333035298@s.whatsapp.net'
+    const tujuan = process.env.WA_TUJUAN;
     const pesan = `*Jadwal Kerja Bakti Desa Wadas*\n\nHari: Jumat\nWaktu: 07.00 WIB\nTempat: Balai Desa Wadas\n\nAyo bersama-sama menjaga kebersihan dan kekompakan desa!`
     await sock.sendMessage(tujuan, { text: pesan })
     console.log('Jadwal kerja bakti telah dikirim.')
