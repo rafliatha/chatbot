@@ -1,0 +1,15 @@
+# Dependensi Node.js (Ukurannya sangat besar, tidak boleh di-upload)
+node_modules/
+
+# File rahasia / kredensial (Tempat kamu menaruh nomor WA tadi)
+.env
+
+# File log error (Jika terjadi error saat run/install)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS generated files (File sampah dari sistem operasi)
+.DS_Store
+Thumbs.db
